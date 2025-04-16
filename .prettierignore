@@ -1,0 +1,11 @@
+node_modules
+public
+.env.example
+.env.local
+.env
+.gitignore
+.prettierignore
+.prettierrc
+LICENSE
+next-env.d.ts
+pnpm-lock.yaml
