@@ -19,6 +19,9 @@
       }
     ],
     "paths": {
+      "@data/*": ["./src/data/*"],
+      "@lib/*": ["./src/lib/*"],
+      "@tailwindcss": ["./src/styles/globals.css"],
       "@/*": ["./src/*"]
     }
   },
