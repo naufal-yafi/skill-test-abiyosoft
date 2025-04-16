@@ -19,6 +19,7 @@
       }
     ],
     "paths": {
+      "@component/*": ["./src/components/*"],
       "@data/*": ["./src/data/*"],
       "@lib/*": ["./src/lib/*"],
       "@tailwindcss": ["./src/styles/globals.css"],

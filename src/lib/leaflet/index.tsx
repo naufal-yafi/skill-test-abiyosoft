@@ -1,24 +1,28 @@
 "use client";
 
+import { Dispatch, SetStateAction, useState } from "react";
 import { MapContainer, Marker, TileLayer, ZoomControl } from "react-leaflet";
 import { useMediaQuery } from "react-responsive";
-import { destinations } from "@data/destinations";
-import { defaultIcon } from "./custom-icon";
-import { useState } from "react";
+import { Destination, destinations } from "@data/destinations";
+import iconMap from "./custom-icon";
 
-export default function Maps() {
-  const [activeMarker, setActiveMarker] = useState<string | null>(null);
+export default function LeafletMaps({
+  changeData,
+}: Readonly<{ changeData: Dispatch<SetStateAction<Destination>> }>) {
+  const [activeMarker, setActiveMarker] = useState<string>(
+    destinations[0].name_place
+  );
   const isDesktop = useMediaQuery({ minWidth: 500 });
 
   return (
     <MapContainer
       center={[-8.4095, 115.1889]}
       zoom={isDesktop ? 10 : 9}
-      className="w-full h-screen"
+      className="w-full h-[40vh] md:h-screen"
       zoomControl={false}
     >
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        attribution='&copy; <a href="https://github.com/naufal-yafi/skill-test-abiyosoft">M Naufal Yafi</a> github'
         url={`https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}.png?key=${process.env.NEXT_PUBLIC_MAP_TILER_KEY}`}
       />
 
@@ -33,12 +37,13 @@ export default function Maps() {
           }}
           icon={
             activeMarker === destination.name_place
-              ? defaultIcon
-              : destination.icon
+              ? iconMap["default"]
+              : iconMap[destination.icon]
           }
           eventHandlers={{
             click: () => {
               setActiveMarker(destination.name_place);
+              changeData(destination);
             },
           }}
         />

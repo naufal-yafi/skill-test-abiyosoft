@@ -1,0 +1,27 @@
+import type { Destination } from "@data/destinations";
+import Image from "next/image";
+
+export default function Card({ data }: Readonly<{ data: Destination }>) {
+  return (
+    <article className="group hover:shadow-2xl transition-all duration-500 rounded-lg">
+      <Image
+        src={data.image}
+        alt="thumbnail"
+        width={650}
+        height={366}
+        className="rounded-lg shadow-2xl group-hover:shadow-none"
+      />
+
+      <div className="p-5 text-sm">
+        <h1 className="font-bold text-xl">{data.name_place}</h1>
+        <h2 className="text-neutral-500">{data.address}</h2>
+
+        <p className="mt-5">{data.description}</p>
+
+        <button className="font-medium mt-8 cursor-pointer">
+          <p>See More</p>
+        </button>
+      </div>
+    </article>
+  );
+}

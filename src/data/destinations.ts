@@ -1,5 +1,4 @@
 import { StaticImageData } from "next/image";
-import { type Icon } from "leaflet";
 import {
   Badung,
   Bangli,
@@ -11,14 +10,8 @@ import {
   Klungkung,
   Tabanan,
 } from "./photos";
-import {
-  beachIcon,
-  mountainIcon,
-  puraIcon,
-  waterfallIcon,
-} from "@lib/leaflet/custom-icon";
 
-type Destination = {
+export type Destination = {
   name_place: string;
   coordinates: {
     lat: number;
@@ -26,8 +19,8 @@ type Destination = {
   };
   address: string;
   description: string;
-  image: StaticImageData[];
-  icon: Icon<{ iconUrl: string; iconSize: [number, number] }>;
+  image: StaticImageData;
+  icon: "default" | "beach" | "mountain" | "pura" | "waterfall";
 };
 
 export const destinations: Destination[] = [
@@ -40,8 +33,8 @@ export const destinations: Destination[] = [
     address: "Anturan, Kec. Buleleng, Kab. Buleleng, Bali",
     description:
       "Pantai utara Bali yang terkenal dengan atraksi lumba-lumba dan suasana tenang untuk snorkeling maupun menyelam.",
-    image: [Buleleng],
-    icon: beachIcon,
+    image: Buleleng,
+    icon: "beach",
   },
   {
     name_place: "Gunung Batur",
@@ -52,8 +45,8 @@ export const destinations: Destination[] = [
     address: "Batur Sel., Kec. Kintamani, Kab. Bangli, Bali",
     description:
       "Gunung berapi aktif yang menjadi destinasi populer untuk pendakian pagi hari dan pemandangan Danau Batur.",
-    image: [Bangli],
-    icon: mountainIcon,
+    image: Bangli,
+    icon: "mountain",
   },
   {
     name_place: "Pantai Medewi",
@@ -64,8 +57,8 @@ export const destinations: Destination[] = [
     address: "Medewi, Kec. Pekutatan, Kab. Jembrana, Bali",
     description:
       "Pantai yang dikenal sebagai surga peselancar dengan ombak panjang di pesisir barat Bali.",
-    image: [Jembrana],
-    icon: beachIcon,
+    image: Jembrana,
+    icon: "beach",
   },
   {
     name_place: "Pura Tanah Lot",
@@ -76,8 +69,8 @@ export const destinations: Destination[] = [
     address: "Beraban, Kec. Kediri, Kab. Tabanan, Bali",
     description:
       "Pura ikonik di atas batu karang di tengah laut, terkenal sebagai tempat menikmati matahari terbenam.",
-    image: [Tabanan],
-    icon: puraIcon,
+    image: Tabanan,
+    icon: "pura",
   },
   {
     name_place: "Pantai Kuta",
@@ -88,8 +81,8 @@ export const destinations: Destination[] = [
     address: "Kec. Kuta, Kab. Badung, Bali",
     description:
       "Pantai populer dengan pasir putih, tempat berselancar, berjemur, dan kehidupan malam yang meriah.",
-    image: [Badung],
-    icon: beachIcon,
+    image: Badung,
+    icon: "beach",
   },
   {
     name_place: "Pantai Sanur",
@@ -100,8 +93,8 @@ export const destinations: Destination[] = [
     address: "Sanur, Kec. Denpasar Selatan, Kota Denpasar, Bali",
     description:
       "Kawasan pantai yang tenang dengan jalur pejalan kaki, kafe pinggir laut, dan sunrise cantik.",
-    image: [Denpasar],
-    icon: beachIcon,
+    image: Denpasar,
+    icon: "beach",
   },
   {
     name_place: "Air Terjun Tegenungan",
@@ -112,8 +105,8 @@ export const destinations: Destination[] = [
     address: "Kemenuh, Kec. Sukawati, Kab. Gianyar, Bali",
     description:
       "Air terjun terkenal di tengah hutan tropis, ideal untuk berenang atau menikmati alam.",
-    image: [Gianyar],
-    icon: waterfallIcon,
+    image: Gianyar,
+    icon: "waterfall",
   },
   {
     name_place: "Pura Kerta Gosa",
@@ -124,8 +117,8 @@ export const destinations: Destination[] = [
     address: "Semarapura Kelod, Kec. Klungkung, Kab. Klungkung, Bali",
     description:
       "Kompleks peninggalan kerajaan Klungkung dengan lukisan klasik Bali di langit-langit bale.",
-    image: [Klungkung],
-    icon: puraIcon,
+    image: Klungkung,
+    icon: "pura",
   },
   {
     name_place: "Pantai Yeh Malet",
@@ -136,7 +129,7 @@ export const destinations: Destination[] = [
     address: "Antiga, Kec. Manggis, Kab. Karangasem, Bali",
     description:
       "Pantai tersembunyi dengan panorama batu karang dan ombak yang cocok untuk wisata santai.",
-    image: [Karangasem],
-    icon: beachIcon,
+    image: Karangasem,
+    icon: "beach",
   },
 ];
