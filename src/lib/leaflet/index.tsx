@@ -1,14 +1,17 @@
 "use client";
 
 import { MapContainer, Marker, TileLayer, ZoomControl } from "react-leaflet";
+import { useMediaQuery } from "react-responsive";
 import { destinations } from "@data/destinations";
 import { defaultIcon } from "./custom-icon";
 
 export default function Maps() {
+  const isDesktop = useMediaQuery({ minWidth: 500 });
+
   return (
     <MapContainer
       center={[-8.4095, 115.1889]}
-      zoom={10}
+      zoom={isDesktop ? 10 : 9}
       className="w-full h-screen"
       zoomControl={false}
     >
@@ -17,7 +20,7 @@ export default function Maps() {
         url={`https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}.png?key=${process.env.NEXT_PUBLIC_MAP_TILER_KEY}`}
       />
 
-      <ZoomControl position="bottomright" />
+      <ZoomControl position={isDesktop ? "bottomright" : "topright"} />
 
       {destinations.map((destination) => (
         <Marker
