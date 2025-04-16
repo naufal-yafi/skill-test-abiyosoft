@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-const Maps = dynamic(() => import("./_maps"), { ssr: false });
+const Maps = dynamic(() => import("@lib/leaflet"), { ssr: false });
 
 export default function Home() {
   return (
