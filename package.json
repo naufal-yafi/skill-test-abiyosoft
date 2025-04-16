@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --port 4567 --turbopack",
     "build": "next build",
-    "start": "next start",
+    "start": "next start --port 4567",
     "lint": "next lint",
     "format": "prettier --write ."
   },
@@ -14,7 +14,8 @@
     "next": "15.3.0",
     "react": "19.0.0-rc.1",
     "react-dom": "19.0.0-rc.1",
-    "react-leaflet": "5.0.0-rc.2"
+    "react-leaflet": "5.0.0-rc.2",
+    "react-responsive": "^10.0.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
