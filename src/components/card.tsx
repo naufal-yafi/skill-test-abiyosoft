@@ -9,7 +9,7 @@ export default function Card({ data }: Readonly<{ data: Destination }>) {
         alt="thumbnail"
         width={650}
         height={366}
-        className="rounded-lg shadow-2xl group-hover:shadow-none"
+        className="rounded-lg shadow-2xl drop-shadow-2xl group-hover:drop-shadow-none group-hover:shadow-none group-hover:rounded-b-none"
       />
 
       <div className="p-5 text-sm">
@@ -19,7 +19,7 @@ export default function Card({ data }: Readonly<{ data: Destination }>) {
         <p className="mt-5">{data.description}</p>
 
         <button className="font-medium mt-8 cursor-pointer flex gap-2 hover:gap-5 transition-all duration-500">
-          <p className="hover:text-neutral-500">See More</p>
+          <p className="hover:text-neutral-500">Lihat selengkapnya</p>
           <Image
             src="/arrow-right-line.png"
             alt="arrow right"
