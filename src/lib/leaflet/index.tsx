@@ -4,8 +4,10 @@ import { MapContainer, Marker, TileLayer, ZoomControl } from "react-leaflet";
 import { useMediaQuery } from "react-responsive";
 import { destinations } from "@data/destinations";
 import { defaultIcon } from "./custom-icon";
+import { useState } from "react";
 
 export default function Maps() {
+  const [activeMarker, setActiveMarker] = useState<string | null>(null);
   const isDesktop = useMediaQuery({ minWidth: 500 });
 
   return (
@@ -25,10 +27,19 @@ export default function Maps() {
       {destinations.map((destination) => (
         <Marker
           key={destination.name_place}
-          icon={defaultIcon}
           position={{
             lat: destination.coordinates.lat,
             lng: destination.coordinates.lng,
+          }}
+          icon={
+            activeMarker === destination.name_place
+              ? defaultIcon
+              : destination.icon
+          }
+          eventHandlers={{
+            click: () => {
+              setActiveMarker(destination.name_place);
+            },
           }}
         />
       ))}

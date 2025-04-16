@@ -1,4 +1,5 @@
 import { StaticImageData } from "next/image";
+import { type Icon } from "leaflet";
 import {
   Badung,
   Bangli,
@@ -10,6 +11,12 @@ import {
   Klungkung,
   Tabanan,
 } from "./photos";
+import {
+  beachIcon,
+  mountainIcon,
+  puraIcon,
+  waterfallIcon,
+} from "@lib/leaflet/custom-icon";
 
 type Destination = {
   name_place: string;
@@ -20,6 +27,7 @@ type Destination = {
   address: string;
   description: string;
   image: StaticImageData[];
+  icon: Icon<{ iconUrl: string; iconSize: [number, number] }>;
 };
 
 export const destinations: Destination[] = [
@@ -33,6 +41,7 @@ export const destinations: Destination[] = [
     description:
       "Pantai utara Bali yang terkenal dengan atraksi lumba-lumba dan suasana tenang untuk snorkeling maupun menyelam.",
     image: [Buleleng],
+    icon: beachIcon,
   },
   {
     name_place: "Gunung Batur",
@@ -44,6 +53,7 @@ export const destinations: Destination[] = [
     description:
       "Gunung berapi aktif yang menjadi destinasi populer untuk pendakian pagi hari dan pemandangan Danau Batur.",
     image: [Bangli],
+    icon: mountainIcon,
   },
   {
     name_place: "Pantai Medewi",
@@ -55,6 +65,7 @@ export const destinations: Destination[] = [
     description:
       "Pantai yang dikenal sebagai surga peselancar dengan ombak panjang di pesisir barat Bali.",
     image: [Jembrana],
+    icon: beachIcon,
   },
   {
     name_place: "Pura Tanah Lot",
@@ -66,6 +77,7 @@ export const destinations: Destination[] = [
     description:
       "Pura ikonik di atas batu karang di tengah laut, terkenal sebagai tempat menikmati matahari terbenam.",
     image: [Tabanan],
+    icon: puraIcon,
   },
   {
     name_place: "Pantai Kuta",
@@ -77,6 +89,7 @@ export const destinations: Destination[] = [
     description:
       "Pantai populer dengan pasir putih, tempat berselancar, berjemur, dan kehidupan malam yang meriah.",
     image: [Badung],
+    icon: beachIcon,
   },
   {
     name_place: "Pantai Sanur",
@@ -88,6 +101,7 @@ export const destinations: Destination[] = [
     description:
       "Kawasan pantai yang tenang dengan jalur pejalan kaki, kafe pinggir laut, dan sunrise cantik.",
     image: [Denpasar],
+    icon: beachIcon,
   },
   {
     name_place: "Air Terjun Tegenungan",
@@ -99,6 +113,7 @@ export const destinations: Destination[] = [
     description:
       "Air terjun terkenal di tengah hutan tropis, ideal untuk berenang atau menikmati alam.",
     image: [Gianyar],
+    icon: waterfallIcon,
   },
   {
     name_place: "Pura Kerta Gosa",
@@ -110,6 +125,7 @@ export const destinations: Destination[] = [
     description:
       "Kompleks peninggalan kerajaan Klungkung dengan lukisan klasik Bali di langit-langit bale.",
     image: [Klungkung],
+    icon: puraIcon,
   },
   {
     name_place: "Pantai Yeh Malet",
@@ -121,5 +137,6 @@ export const destinations: Destination[] = [
     description:
       "Pantai tersembunyi dengan panorama batu karang dan ombak yang cocok untuk wisata santai.",
     image: [Karangasem],
+    icon: beachIcon,
   },
 ];
