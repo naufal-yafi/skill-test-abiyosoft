@@ -1,10 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [Setup ENV](#setup-env)
+- [Getting Started](#getting-started)
+  - [Install dependencies](#install-dependencies)
+  - [Run the development server](#run-the-development-server)
+  - [Run production version](#run-production-version)
+
+## Setup ENV
+
+Create .env and fill
+
+```txt
+NEXT_PUBLIC_MAP_TILER_KEY=<YOUR_KEY>
+```
+
+[Get Key Here](https://cloud.maptiler.com/account/keys/)
 
 ## Getting Started
 
-First, run the development server:
+### Install dependencies
 
-```bash
+```sh
+npm i
+# or
+yarn i
+# or
+pnpm i
+# or
+bun i
+```
+
+### Run the development server
+
+```sh
 npm run dev
 # or
 yarn dev
@@ -14,23 +43,18 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:4567](http://localhost:4567) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Run production version
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```sh
+npm run build && npm start
+# or
+yarn build && yarn start
+# or
+pnpm build && pnpm start
+# or
+bun build && bun start
+```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open [http://localhost:4567](http://localhost:4567) with your browser to see the result.
