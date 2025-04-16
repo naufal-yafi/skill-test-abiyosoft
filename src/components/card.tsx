@@ -18,8 +18,14 @@ export default function Card({ data }: Readonly<{ data: Destination }>) {
 
         <p className="mt-5">{data.description}</p>
 
-        <button className="font-medium mt-8 cursor-pointer">
-          <p>See More</p>
+        <button className="font-medium mt-8 cursor-pointer flex gap-2 hover:gap-5 transition-all duration-500">
+          <p className="hover:text-neutral-500">See More</p>
+          <Image
+            src="/arrow-right-line.png"
+            alt="arrow right"
+            width={18}
+            height={18}
+          />
         </button>
       </div>
     </article>
