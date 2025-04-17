@@ -31,10 +31,11 @@ export default function CardDisplayDestination({
         >
           <span className="hover:text-neutral-500">Lihat selengkapnya</span>
           <Image
-            src="/arrow-right-line.png"
+            src="/arrow-right-line.svg"
             alt="arrow right"
             width={18}
             height={18}
+            className="object-contain"
             priority
           />
         </Link>

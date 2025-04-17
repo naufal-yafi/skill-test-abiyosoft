@@ -7,7 +7,7 @@ import CardDisplayDestination from "@component/card-display-destination";
 const Maps = dynamic(() => import("@component/maps"), { ssr: false });
 
 export default function Home() {
-  const [currentData, setCurrentData] = useState<Destination>(destinations[0]);
+  const [currentData, setCurrentData] = useState<Destination>(destinations[4]);
 
   return (
     <main className="w-full relative flex flex-col md:flex-row">
