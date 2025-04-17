@@ -6,7 +6,7 @@ export default function CardDisplayDestination({
   data,
 }: Readonly<{ data: Destination }>) {
   return (
-    <figure className="group hover:shadow-2xl transition-all duration-500 rounded-lg h-[60vh] md:h-[72vh]">
+    <figure className="group hover:shadow-2xl transition-all duration-500 rounded-lg max-w-md min-h-[68vh] lg:min-h-0">
       <Image
         src={data.image}
         alt={`foto dari ${data.name_place}`}
