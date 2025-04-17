@@ -8,7 +8,7 @@ export default function CardDisplayDestination({
   return (
     <figure className="group hover:shadow-2xl transition-all duration-500 rounded-lg">
       <Image
-        src={data.image[0]}
+        src={data.image}
         alt={`foto dari ${data.name_place}`}
         width={650}
         height={366}
