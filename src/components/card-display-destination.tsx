@@ -1,11 +1,11 @@
 import type { Destination } from "@data/destinations";
 import Image from "next/image";
 
-export default function Card({ data }: Readonly<{ data: Destination }>) {
+export default function CardDisplayDestination({ data }: Readonly<{ data: Destination }>) {
   return (
     <article className="group hover:shadow-2xl transition-all duration-500 rounded-lg">
       <Image
-        src={data.image}
+        src={data.image[0]}
         alt="thumbnail"
         width={650}
         height={366}
