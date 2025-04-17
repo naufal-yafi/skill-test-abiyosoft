@@ -6,7 +6,7 @@ export default function CardDisplayDestination({
   data,
 }: Readonly<{ data: Destination }>) {
   return (
-    <figure className="group hover:shadow-2xl transition-all duration-500 rounded-lg">
+    <figure className="group hover:shadow-2xl transition-all duration-500 rounded-lg h-[60vh] md:h-[72vh]">
       <Image
         src={data.image}
         alt={`foto dari ${data.name_place}`}
@@ -31,11 +31,11 @@ export default function CardDisplayDestination({
         >
           <span className="hover:text-neutral-500">Lihat selengkapnya</span>
           <Image
-            src="/arrow-right-line.svg"
+            src="/arrow-right-line.png"
             alt="arrow right"
             width={18}
             height={18}
-            className="object-contain"
+            className="object-contain aspect-square"
             priority
           />
         </Link>

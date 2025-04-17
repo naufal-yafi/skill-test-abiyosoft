@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <main className="w-full relative flex flex-col md:flex-row">
-      <section className="w-full md:w-1/2 block">
+      <section className="w-full md:w-1/2 block h-[40vh] lg:h-auto">
         <Maps changeData={setCurrentData} />
       </section>
 
