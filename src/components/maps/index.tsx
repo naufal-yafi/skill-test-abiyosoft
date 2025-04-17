@@ -1,9 +1,9 @@
 "use client";
 
-import { Dispatch, SetStateAction, useState } from "react";
+import { type Dispatch, type SetStateAction, useState } from "react";
 import { MapContainer, Marker, TileLayer, ZoomControl } from "react-leaflet";
 import { useMediaQuery } from "react-responsive";
-import { Destination, destinations } from "@data/destinations";
+import { type Destination, destinations } from "@data/destinations";
 import iconMap from "./custom-icon";
 
 export default function LeafletMaps({

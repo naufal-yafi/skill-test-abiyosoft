@@ -16,9 +16,9 @@ export default function Home() {
       </section>
 
       <aside className="w-full md:w-1/2 py-6 px-6 flex justify-center">
-        <div className="mx-auto max-w-lg">
+        <article className="mx-auto max-w-lg">
           <CardDisplayDestination data={currentData} />
-        </div>
+        </article>
       </aside>
     </main>
   );
