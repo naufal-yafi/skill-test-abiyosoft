@@ -1,3 +1,7 @@
+![https://pagespeed.web.dev/analysis/https-skill-test-abiyosoft-vercel-app/06pwogv20j?form_factor=mobile](.github/thumbnail.png)
+
+Report: [https://pagespeed.web.dev/analysis/https-skill-test-abiyosoft-vercel-app/06pwogv20j?form_factor=mobile](https://pagespeed.web.dev/analysis/https-skill-test-abiyosoft-vercel-app/06pwogv20j?form_factor=mobile)
+
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
