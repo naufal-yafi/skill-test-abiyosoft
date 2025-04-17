@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import "@tailwindcss";
 
@@ -10,8 +10,58 @@ const poppins = Poppins({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  colorScheme: "light",
+  themeColor: "white",
+};
+
+export const seo = {
+  title: "22 Tempat Wisata Terbaik di Bali yang Wajib Dikunjungi",
+  description:
+    "Temukan rekomendasi 10 tempat wisata terbaik di Bali yang wajib Anda kunjungi saat liburan, mulai dari pantai indah hingga tempat budaya yang memukau.",
+};
+
 export const metadata: Metadata = {
-  title: "Tempat Wisata di Bali",
+  title: seo.title,
+  keywords: [
+    "wisata Bali",
+    "tempat wisata di Bali",
+    "liburan ke Bali",
+    "destinasi Bali",
+    "Bali Indonesia",
+  ],
+  description: seo.description,
+  category: "Pariwisata",
+  authors: [
+    {
+      name: "Muhammad Naufal Yafi'",
+      url: "https://github.com/naufal-yafi",
+    },
+    {
+      name: "Muhammad Naufal Yafi'",
+      url: "https://www.linkedin.com/in/naufal-yafi",
+    },
+  ],
+  robots: "index, follow",
+  openGraph: {
+    title: seo.title,
+    description: seo.description,
+    type: "profile",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 580,
+        height: 405,
+        alt: "",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: seo.title,
+    description: seo.description,
+    images: ["/og-image.jpg"],
+  },
 };
 
 export default function RootLayout({
