@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import "@tailwindcss";
+import { seo } from "./_seo";
 
 const poppins = Poppins({
   preload: true,
@@ -13,12 +14,6 @@ const poppins = Poppins({
 export const viewport: Viewport = {
   colorScheme: "light",
   themeColor: "white",
-};
-
-export const seo = {
-  title: "22 Tempat Wisata Terbaik di Bali yang Wajib Dikunjungi",
-  description:
-    "Temukan rekomendasi 10 tempat wisata terbaik di Bali yang wajib Anda kunjungi saat liburan, mulai dari pantai indah hingga tempat budaya yang memukau.",
 };
 
 export const metadata: Metadata = {
