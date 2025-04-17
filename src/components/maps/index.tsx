@@ -28,32 +28,33 @@ export default function LeafletMaps({
         url={`https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}.png?key=${process.env.NEXT_PUBLIC_MAP_TILER_KEY}`}
       />
 
-      <ZoomControl position={isDesktop ? "bottomright" : "topright"} />
+      <ZoomControl position="topright" />
 
       <MarkerClusterGroup
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         iconCreateFunction={(cluster: any) => {
           const count = cluster.getChildCount();
 
           return L.divIcon({
             html: `
-        <div style="
-          position: relative;
-          width: 38px;
-          height: 38px;
-          background-image: url('/marker-group.png');
-          background-size: cover;
-          background-position: center;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: white;
-          font-weight: medium;
-          font-size: 14px;
-        ">
-          ${count}
-        </div>
-      `,
-            className: "", // remove leaflet's default style
+              <div style="
+                position: relative;
+                width: 38px;
+                height: 38px;
+                background-image: url('/marker-group.png');
+                background-size: cover;
+                background-position: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-weight: medium;
+                font-size: 14px;
+              ">
+                ${count}
+              </div>
+            `,
+            className: "",
             iconSize: L.point(38, 38),
           });
         }}
